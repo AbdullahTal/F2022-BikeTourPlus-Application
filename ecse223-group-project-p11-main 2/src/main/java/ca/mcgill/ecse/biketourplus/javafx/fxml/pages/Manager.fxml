@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.mcgill.ecse.biketourplus.javafx.fxml.controllers.ManagerTabController">
+   <children>
+      <Button fx:id="initializationBTButton" layoutX="263.0" layoutY="85.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#initializationBTCClicked" prefHeight="25.0" prefWidth="275.0" text="Initiate Bike Tour Creation Process" />
+      <Group layoutX="313.0" layoutY="147.0">
+         <children>
+            <ChoiceBox fx:id="specificWeekChoiceBox" layoutX="100.0" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="75.0" />
+            <Label alignment="CENTER_RIGHT" layoutY="4.0" text="Select Week #" />
+            <Button fx:id="startTripForParticipantButton" alignment="CENTER" contentDisplay="CENTER" layoutX="37.0" layoutY="38.0" maxWidth="-Infinity" mnemonicParsing="false" onAction="#startTripClicked" prefWidth="100.0" text="Start Trips" textAlignment="CENTER" />
+         </children>
+      </Group>
+      <Group layoutX="221.0" layoutY="262.0">
+         <children>
+            <ChoiceBox fx:id="participantEmailChoiceBox" layoutX="194.0" layoutY="2.0" maxWidth="1.7976931348623157E308" prefHeight="10.0" prefWidth="164.0" />
+            <Button fx:id="finishParticipantTripButton" layoutX="95.0" layoutY="38.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#finishParticipantTripClicked" prefHeight="25.0" prefWidth="182.0" text="Finish Participant's Trip" />
+            <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="4.0" prefHeight="18.0" prefWidth="157.0" text="Choose participant by email" />
+         </children>
+      </Group>
+   </children>
+</AnchorPane>

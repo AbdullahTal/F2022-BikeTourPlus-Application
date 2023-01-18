@@ -1,0 +1,80 @@
+namespace ca.mcgill.ecse.biketourplus.controller;
+
+class TOBikeTour {
+  immutable;
+  Integer id;
+  Integer startWeek;
+  Integer endWeek;
+  guideEmail;
+  guideName;
+  Integer totalCostForGuide;
+  0..1 -> * TOParticipantCost participantCosts;
+}
+
+class TOParticipantCost {
+  immutable;
+  participantEmail;
+  participantName;
+  Integer totalCostForBookableItems;
+  Integer totalCostForBikingTour;
+  status;
+  authorizationCode;
+  Integer refundedPercentageAmount;
+}
+
+class TOParticipant {
+  immutable;
+  participantEmail;
+  participantName;
+  participantPassword;
+  participantEmergencyContact;
+  Integer nrWeeks;
+  Integer weekAvailableFrom;
+  Integer weekAvailableUntil;
+  Boolean lodgeRequired;
+  authorizationCode;
+  Integer refundedPercentageAmount;
+}
+
+class TOBookableItem {
+	immutable;
+	name;
+	Double price;	
+}
+
+
+class TOBookedItem {
+	immutable;
+	name;
+	Integer quantity;	
+}
+
+class TOGuide {
+  immutable;
+  guideEmail;
+  guidePassword;
+  guideName;
+  guideEmergencyContact;
+
+}
+
+class TOCombo {
+  immutable;
+  name;
+  Integer discount;
+  Double price;
+}
+
+class TOComboItem {
+  immutable;
+  name;
+  Integer quantity;
+}
+
+class TOBikeTourPlus {
+  immutable;
+  Date startDate;
+  Integer nrWeeks;
+  Integer priceOfGuidePerWeek;
+}
+

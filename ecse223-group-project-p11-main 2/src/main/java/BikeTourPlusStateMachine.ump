@@ -1,0 +1,72 @@
+class Participant {
+
+  sm {
+
+    NotAssigned{
+      assignParticipant [canBeAssigned()] -> Assigned;
+      cancel / {adjustRefund(0);} -> Cancelled;
+    }
+
+    Assigned {
+      pay [hasPaid()] -> Paid;
+      goOnTour [!hasPaid()] -> Banned ;
+      cancel / {adjustRefund(0);} -> Cancelled;
+    }
+
+    Paid {
+      goOnTour -> Started;
+      cancel / {adjustRefund(50);} -> Cancelled;
+    }
+
+    Started {
+      finishTour / {adjustRefund(0);} -> Finished;
+      cancel / {adjustRefund(10);} -> Cancelled;
+    }
+
+    Finished {
+
+    }
+
+    Cancelled {
+
+    }
+
+    Banned {
+
+    }
+
+  }
+
+  /**
+  * Determines if assigned bike tour is inside participant's desired window and desired length.
+  *
+  * @author Ali, Andrew, Annie, Ari, Martin, Simon
+  * @return boolean if tour dates match participant requests
+  */
+  private boolean canBeAssigned()  {
+    BikeTour b = getBikeTour();
+    return ((b != null) && ((b.getEndWeek() - b.getStartWeek())+1 == nrWeeks) &&
+            (b.getStartWeek() >= weekAvailableFrom) && (b.getEndWeek() <= weekAvailableUntil));
+  }
+
+  /**
+  * Determines if participant has paid, represented by a non-null authorization code.
+  *
+  * @author Ali, Andrew, Annie, Ari, Martin, Simon
+  * @return boolean if authorization code is not empty
+  */
+  private boolean hasPaid() {
+    return (authorizationCode != null && !authorizationCode.isEmpty());
+  }
+
+  /**
+  * Adjusts participant's refund percentage.
+  *
+  * @author Ali, Andrew, Annie, Ari, Martin, Simon
+  * @param percentage the percentage to set refund to
+  */
+  private void adjustRefund(int percentage) {
+    setRefundedPercentageAmount(percentage);
+  }
+
+}

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.mcgill.ecse.biketourplus.javafx.fxml.controllers.GearController">
+   <children>
+      <Accordion layoutX="421.0" layoutY="46.0" maxHeight="350.0" prefHeight="300.0" prefWidth="350.0">
+         <panes>
+            <TitledPane animated="false" prefHeight="146.0" prefWidth="253.0" text="Create New Gear">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="22.0" layoutY="11.0" maxHeight="350.0" prefHeight="200.0" prefWidth="300.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="gearNameTextField" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="gearPriceTextField" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Button fx:id="createGearButton" mnemonicParsing="false" onAction="#createGearClicked" prefHeight="25.0" prefWidth="340.0" text="Create Gear" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Button>
+                              <Label text="Gear Name" GridPane.hgrow="ALWAYS" />
+                              <Label text="Price per week" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </TitledPane>
+            <TitledPane animated="false" text="Update Existing Gear">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="22.0" layoutY="11.0" prefHeight="200.0" prefWidth="300.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="30.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Existing Gear Name" GridPane.hgrow="ALWAYS" />
+                              <GridPane GridPane.rowIndex="2">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="263.0" minWidth="10.0" prefWidth="177.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="119.0" minWidth="10.0" prefWidth="104.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="New Gear Name" GridPane.hgrow="ALWAYS" />
+                                    <Label text="New Gear Price" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <TextField fx:id="newGearNameTextField" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="newGearPriceTextField" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" right="5.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                 </children>
+                              </GridPane>
+                              <Button fx:id="updateGearButton" mnemonicParsing="false" onAction="#updateGearClicked" prefHeight="25.0" prefWidth="335.0" text="Update Gear" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" />
+                              <ChoiceBox fx:id="updateGearChoiceBox" prefHeight="25.0" prefWidth="338.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </TitledPane>
+            <TitledPane animated="false" prefHeight="250.0" prefWidth="266.0" text="Delete Existing Gear">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="22.0" layoutY="36.0" prefHeight="200.0" prefWidth="300.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Button fx:id="deleteGearButton" mnemonicParsing="false" onAction="#deleteGearClicked" prefHeight="25.0" prefWidth="357.0" text="Delete" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                              <Label text="Gear Name" GridPane.hgrow="ALWAYS" />
+                              <ChoiceBox fx:id="deleteGearChoiceBox" prefHeight="25.0" prefWidth="335.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </TitledPane>
+         </panes>
+      </Accordion>
+      <TableView fx:id="gearTable" layoutX="32.0" layoutY="46.0" prefHeight="385.0" prefWidth="350.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <columns>
+            <TableColumn fx:id="gearNameColumn" prefWidth="225.0" text="Name" />
+            <TableColumn fx:id="gearPriceColumn" minWidth="0.0" prefWidth="120.0" resizable="false" text="Price/Wk" />
+         </columns>
+      </TableView>
+      <Label layoutX="559.0" layoutY="16.0" text="Manage Gears" textAlignment="CENTER" />
+      <Label alignment="CENTER" layoutX="144.0" layoutY="15.0" prefHeight="20.0" prefWidth="126.0" text="View Existing Gears" textAlignment="CENTER" />
+   </children>
+</AnchorPane>

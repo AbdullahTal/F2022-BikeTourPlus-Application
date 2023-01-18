@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.mcgill.ecse.biketourplus.javafx.fxml.controllers.ToursController">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="-Infinity" prefWidth="80.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="725.0" minWidth="100.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="50.0" minHeight="30.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="50.0" minHeight="30.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="50.0" minHeight="30.0" prefHeight="50.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="300.0" minHeight="0.0" prefHeight="164.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TableView fx:id="tourTable" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="750.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy></TableView>
+      <Label prefHeight="17.0" prefWidth="87.0" text="View Tour #" GridPane.columnIndex="1" />
+      <ComboBox fx:id="tourComboBox" minWidth="50.0" prefWidth="50.0" GridPane.columnIndex="2" />
+      <Label prefHeight="17.0" prefWidth="87.0" text="Guide Name:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label fx:id="guideNameLabel" text="" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Label text="Guide Email:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+      <Label fx:id="guideEmailLabel" text="" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+      <Label text="Guide Cost:" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+      <Label fx:id="guideCostLabel" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+      <Label prefHeight="17.0" prefWidth="87.0" text="Start Week:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label fx:id="startWeekLabel" text="" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Label text="End Week:" GridPane.columnIndex="3" GridPane.rowIndex="2" />     
+      <Label fx:id="endWeekLabel" text="" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+   </children>
+</GridPane>
