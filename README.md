@@ -14,6 +14,8 @@ Collaborated in a team of six, to which I am the author of a portion (refer to j
 
 ## Technical Tools
 
+The following table outlines the tools utilized to implement the project.
+
 | Tool  | Function |
 | ------------- | ------------- |
 | Figma  | UI Mockup  |
